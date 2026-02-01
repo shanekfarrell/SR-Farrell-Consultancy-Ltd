@@ -1,0 +1,10 @@
+# Netlify redirects file
+
+# Handle clean URLs
+/services    /services.html    200
+/about       /about.html       200
+/work        /work.html        200
+/contact     /contact.html     200
+
+# 404 handling
+/*    /404.html   404

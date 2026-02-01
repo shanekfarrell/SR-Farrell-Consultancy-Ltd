@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SR Farrell Consultancy - AI Workflows & Content Systems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1E3A8A;
+            --accent-cyan: #06B6D4;
+            --dark-gray: #333333;
+            --medium-gray: #666666;
+            --light-gray: #f7f7f7;
+            --border-gray: #e5e5e5;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 0 auto;
+            background: white;
+            page-break-after: always;
+        }
+
+        .page:last-child {
+            page-break-after: auto;
+        }
+
+        /* Page 1 */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--primary-blue);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-blue);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon span {
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .logo-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .tagline {
+            font-size: 12px;
+            color: var(--medium-gray);
+        }
+
+        .hero {
+            background: var(--primary-blue);
+            color: white;
+            padding: 32px;
+            margin-bottom: 24px;
+            border-radius: 4px;
+        }
+
+        .hero-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--accent-cyan);
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 14px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .problem-section {
+            margin-bottom: 24px;
+        }
+
+        .problem-section h2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-bottom: 12px;
+        }
+
+        .problem-section p {
+            font-size: 13px;
+            color: var(--medium-gray);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .problem-list {
+            list-style: none;
+        }
+
+        .problem-list li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 13px;
+            color: var(--dark-gray);
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        .problem-list li:last-child {
+            border-bottom: none;
+        }
+
+        .problem-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+        .services-section {
+            margin-bottom: 24px;
+        }
+
+        .services-section h2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-bottom: 16px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .service-card {
+            border: 1px solid var(--border-gray);
+            padding: 16px;
+        }
+
+        .service-number {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--accent-cyan);
+            margin-bottom: 8px;
+        }
+
+        .service-card h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-bottom: 8px;
+        }
+
+        .service-card p {
+            font-size: 11px;
+            color: var(--medium-gray);
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            font-size: 11px;
+            color: var(--dark-gray);
+            padding: 4px 0;
+            padding-left: 12px;
+            position: relative;
+        }
+
+        .service-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyan);
+        }
+
+        /* Page 2 */
+        .process-section {
+            margin-bottom: 24px;
+        }
+
+        .process-section h2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-bottom: 16px;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .process-step {
+            background: var(--light-gray);
+            padding: 16px;
+            border: 1px solid var(--border-gray);
+        }
+
+        .step-number {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 8px;
+        }
+
+        .process-step h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-bottom: 8px;
+        }
+
+        .process-step p {
+            font-size: 11px;
+            color: var(--medium-gray);
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .outputs-label {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--dark-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            padding-top: 8px;
+            border-top: 1px solid var(--border-gray);
+        }
+
+        .outputs ul {
+            list-style: none;
+        }
+
+        .outputs li {
+            font-size: 10px;
+            color: var(--medium-gray);
+            padding: 2px 0;
+        }
+
+        .deliverables-section {
+            background: var(--primary-blue);
+            color: white;
+            padding: 20px;
+            margin-bottom: 24px;
+            border-radius: 4px;
+        }
+
+        .deliverables-section h2 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+        }
+
+        .deliverable-item {
+            text-align: center;
+            padding: 12px 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        .deliverable-item p {
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        .about-section {
+            margin-bottom: 24px;
+        }
+
+        .about-section h2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-bottom: 12px;
+        }
+
+        .about-section p {
+            font-size: 12px;
+            color: var(--medium-gray);
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .clients {
+            margin-bottom: 24px;
+            padding: 16px;
+            background: var(--light-gray);
+            border-radius: 4px;
+        }
+
+        .clients p {
+            font-size: 12px;
+            color: var(--dark-gray);
+            text-align: center;
+        }
+
+        .clients strong {
+            color: var(--primary-blue);
+        }
+
+        .cta-section {
+            background: var(--primary-blue);
+            color: white;
+            padding: 24px;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .cta-section h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .cta-section p {
+            font-size: 13px;
+            opacity: 0.9;
+            margin-bottom: 16px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary-blue);
+            padding: 12px 32px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .cta-url {
+            margin-top: 12px;
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        .footer {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-gray);
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 11px;
+            color: var(--medium-gray);
+        }
+
+        @media print {
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .page {
+                margin: 0;
+                padding: 15mm;
+            }
+        }
+
+        @media screen {
+            body {
+                background: #e5e5e5;
+                padding: 20px;
+            }
+
+            .page {
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1 -->
+    <div class="page">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <span>SRF</span>
+                </div>
+                <span class="logo-text">SR Farrell Consultancy</span>
+            </div>
+            <span class="tagline">AI Workflows & Content Systems</span>
+        </div>
+
+        <div class="hero">
+            <p class="hero-label">AI-Enhanced Marketing</p>
+            <h1>We build AI workflows and content systems for founder-led startups.</h1>
+            <p>Your team ships faster, documents better, and stops reinventing the wheel.</p>
+        </div>
+
+        <div class="problem-section">
+            <h2>AI adoption is happening but it's ad-hoc</h2>
+            <p>You've tried ChatGPT. Maybe a few automations. But nothing connects. Marketing is inconsistent, workflows break, and your team keeps reinventing the wheel while competitors pull ahead.</p>
+            <ul class="problem-list">
+                <li>No system for content: just scattered docs and one-off posts</li>
+                <li>AI tools adopted piecemeal, with no shared playbook</li>
+                <li>Manual work eats hours that should go toward growth</li>
+            </ul>
+        </div>
+
+        <div class="services-section">
+            <h2>Two things we do</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">01</div>
+                    <h3>AI Systems & Automation</h3>
+                    <p>We build n8n workflows that remove friction, not add complexity. Practical systems your team can actually use.</p>
+                    <ul class="service-list">
+                        <li>Workflow automation (n8n, Zapier, Make)</li>
+                        <li>Lead capture and qualification pipelines</li>
+                        <li>Content production and distribution</li>
+                        <li>Market monitoring and intelligence</li>
+                        <li>Internal knowledge bases and SOPs</li>
+                        <li>API integrations across your stack</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">02</div>
+                    <h3>Strategic Content & Narrative</h3>
+                    <p>Clear positioning. Consistent output. Content that sounds like your best thinking, systematised.</p>
+                    <ul class="service-list">
+                        <li>Messaging architecture and brand voice</li>
+                        <li>Case studies, white papers, guides</li>
+                        <li>Editorial calendars and workflows</li>
+                        <li>SEO-focused content strategy</li>
+                        <li>Web3 and emerging tech specialisation</li>
+                        <li>Multilingual content (EN, FR, IT, ES)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>SR Farrell Consultancy Ltd. | srfarrell.com | srfarrellconsultancy@gmail.com</p>
+        </div>
+    </div>
+
+    <!-- Page 2 -->
+    <div class="page">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <span>SRF</span>
+                </div>
+                <span class="logo-text">SR Farrell Consultancy</span>
+            </div>
+            <span class="tagline">AI Workflows & Content Systems</span>
+        </div>
+
+        <div class="process-section">
+            <h2>How we work</h2>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">Step 1</div>
+                    <h3>Audit</h3>
+                    <p>We map your current workflows, content gaps, and AI maturity. No fluff: just a clear picture of where you're losing time.</p>
+                    <div class="outputs">
+                        <div class="outputs-label">Outputs</div>
+                        <ul>
+                            <li>Workflow audit document</li>
+                            <li>Opportunity map with recommendations</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">Step 2</div>
+                    <h3>Build</h3>
+                    <p>We pick the highest-impact system and ship it. One working workflow, fully documented, in your hands within 30 days.</p>
+                    <div class="outputs">
+                        <div class="outputs-label">Outputs</div>
+                        <ul>
+                            <li>Live workflow or content system</li>
+                            <li>Playbook with templates and SOPs</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">Step 3</div>
+                    <h3>Embed</h3>
+                    <p>We train your team to run it without you. Handover includes docs, async support, and a 30-day check-in.</p>
+                    <div class="outputs">
+                        <div class="outputs-label">Outputs</div>
+                        <ul>
+                            <li>Team training session</li>
+                            <li>Documentation + 30-day support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="deliverables-section">
+            <h2>What you get in the first 30 days</h2>
+            <div class="deliverables-grid">
+                <div class="deliverable-item">
+                    <p>Workflow and content audit</p>
+                </div>
+                <div class="deliverable-item">
+                    <p>One shipped system</p>
+                </div>
+                <div class="deliverable-item">
+                    <p>Playbook with templates and SOPs</p>
+                </div>
+                <div class="deliverable-item">
+                    <p>Team training and handover</p>
+                </div>
+                <div class="deliverable-item">
+                    <p>30-day async support</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <h2>Who we are</h2>
+            <p>We're AI automation specialists with a background in journalism and research. 15 years building content systems, finding brand voice, and shipping narrative arcs for companies that need to sound sharp and ship fast.</p>
+            <p>Our n8n builds handle everything from lead qualification pipelines to multi-platform content distribution. We've built workflows for Myosin and their clients, and our team has worked with Coin Bureau, BBC, NBC News, and others.</p>
+        </div>
+
+        <div class="clients">
+            <p><strong>Worked with:</strong> Myosin | Coin Bureau | Ripple | NEAR | EtherFuse | BBC | NBC News</p>
+        </div>
+
+        <div class="cta-section">
+            <h2>Stop patching. Start building systems.</h2>
+            <p>Book a 30-minute call to audit your workflows and see where AI and content systems can help.</p>
+            <a href="https://srfarrell.com/contact" class="cta-button">Book an audit call</a>
+            <p class="cta-url">srfarrell.com/contact</p>
+        </div>
+
+        <div class="footer">
+            <p>SR Farrell Consultancy Ltd. | srfarrell.com | srfarrellconsultancy@gmail.com</p>
+        </div>
+    </div>
+</body>
+</html>

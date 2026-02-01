@@ -1,0 +1,11 @@
+# robots.txt for SR Farrell Consultancy
+# https://srfarrell.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://srfarrell.com/sitemap.xml
+
+# Disallow admin/system pages
+Disallow: /success.html

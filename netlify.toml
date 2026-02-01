@@ -1,0 +1,46 @@
+# Netlify Configuration for SR Farrell Consultancy
+
+[build]
+  publish = "."
+
+# Redirect www to non-www (update domain when ready)
+[[redirects]]
+  from = "https://www.srfarrell.com/*"
+  to = "https://srfarrell.com/:splat"
+  status = 301
+  force = true
+
+# Custom headers for security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+
+# Cache static assets
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML pages - shorter cache for updates
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Form notification settings (configure in Netlify dashboard)
+# Forms will be automatically detected due to data-netlify="true" attribute

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SR Farrell Consultancy | AI Automation & Content Strategy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1E3A8A;
+            --accent-cyan: #06B6D4;
+            --black: #000000;
+            --dark-gray: #333333;
+            --medium-gray: #666666;
+            --light-gray: #f7f7f7;
+            --border-gray: #e5e5e5;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            background: white;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 80px;
+        }
+
+        /* Navigation */
+        header {
+            background: var(--light-gray);
+            border-bottom: 1px solid var(--border-gray);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 80px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--black);
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 48px;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 100px 0;
+            background: var(--primary-blue);
+        }
+
+        .hero .container {
+            max-width: 900px;
+        }
+
+        .hero-label {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--accent-cyan);
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 32px;
+            color: white;
+            letter-spacing: -1.5px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 120px 0;
+        }
+
+        .section-header {
+            margin-bottom: 80px;
+        }
+
+        .section-label {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--primary-blue);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 600;
+            color: var(--black);
+            letter-spacing: -0.8px;
+            margin-bottom: 24px;
+        }
+
+        .section-description {
+            font-size: 18px;
+            color: var(--medium-gray);
+            line-height: 1.7;
+            max-width: 700px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+        }
+
+        .service-card {
+            background: white;
+            border: 1px solid var(--border-gray);
+            padding: 48px;
+            transition: box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+
+        .service-number {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-cyan);
+            margin-bottom: 24px;
+        }
+
+        .service-card h3 {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .service-card p {
+            font-size: 16px;
+            color: var(--medium-gray);
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-gray);
+            font-size: 15px;
+            color: var(--dark-gray);
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* About Section */
+        .about {
+            padding: 120px 0;
+            background: var(--light-gray);
+        }
+
+        .about-content {
+            max-width: 800px;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--medium-gray);
+            margin-bottom: 28px;
+        }
+
+        /* Case Studies */
+        .case-studies {
+            padding: 120px 0;
+        }
+
+        .case-grid {
+            display: grid;
+            gap: 48px;
+        }
+
+        .case-card {
+            background: white;
+            border: 1px solid var(--border-gray);
+            padding: 48px;
+            transition: box-shadow 0.3s;
+        }
+
+        .case-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+
+        .case-meta {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 24px;
+            font-size: 13px;
+            color: var(--medium-gray);
+        }
+
+        .case-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .case-meta-label {
+            font-weight: 600;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .case-card h3 {
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 20px;
+            letter-spacing: -0.6px;
+        }
+
+        .case-card p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--medium-gray);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 120px 0;
+            background: var(--primary-blue);
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 40px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: -0.8px;
+        }
+
+        .contact p {
+            font-size: 18px;
+            margin-bottom: 48px;
+            opacity: 0.9;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary-blue);
+            padding: 18px 48px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-gray);
+            color: #999;
+            padding: 48px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 40px;
+            }
+
+            nav {
+                padding: 24px 40px;
+            }
+
+            .hero h1 {
+                font-size: 44px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 24px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 24px;
+                padding: 24px;
+            }
+
+            nav ul {
+                gap: 24px;
+            }
+
+            .hero {
+                padding: 80px 0 60px 0;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .services, .about, .case-studies, .contact {
+                padding: 80px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <a href="#" class="logo">SR Farrell Consultancy</a>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-label">Consultancy</div>
+            <h1>Intelligent automation and strategic content for ambitious businesses</h1>
+            <p>We help organizations streamline operations through AI-powered automation while building compelling narratives that strengthen market position across multiple languages and sectors.</p>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Our Services</div>
+                <h2 class="section-title">What we deliver</h2>
+                <p class="section-description">Two core capabilities designed to transform how businesses operate and communicate in an AI-enabled economy.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">01</div>
+                    <h3>AI Automation</h3>
+                    <p>Custom-built automation systems that eliminate repetitive work, reduce operational costs, and free teams to focus on high-value activities.</p>
+                    <ul class="service-list">
+                        <li>News aggregation and intelligence systems</li>
+                        <li>Workflow automation and optimization</li>
+                        <li>Lead generation and qualification</li>
+                        <li>Market segmentation and analysis</li>
+                        <li>Lead magnet development</li>
+                        <li>SEO optimization tools</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-number">02</div>
+                    <h3>Content Strategy & Execution</h3>
+                    <p>Strategic content that elevates brand positioning, expands market reach, and drives measurable business outcomes across channels and languages.</p>
+                    <ul class="service-list">
+                        <li>Brand positioning and messaging architecture</li>
+                        <li>Technical documentation and white papers</li>
+                        <li>Thought leadership development</li>
+                        <li>SEO-optimized content production</li>
+                        <li>Web3 and cryptocurrency specialization</li>
+                        <li>Multilingual content (EN, FR, IT, ES)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">About</div>
+                <h2 class="section-title">Experience spanning journalism, technology, and global markets</h2>
+            </div>
+            
+            <div class="about-content">
+                <p>SR Farrell Consultancy operates at the convergence of content strategy, AI automation, and international business development. Based in Portugal with Irish registration, the practice serves clients globally with particular expertise in web3 and emerging technology sectors.</p>
+                
+                <p>The consultancy draws on over a decade of high-stakes communications work, including coordinating 45-person distributed journalist networks in conflict zones and partnering with organizations like International Medical Corps. This background informs an approach to content and automation that emphasizes clarity, reliability, and cross-cultural effectiveness.</p>
+                
+                <p>Recent engagements include serving as AI Hub & Content Lead at Myosin, a selective crypto marketing DAO (accepting fewer than 5% of applicants) working with tier-one clients including Ripple, NEAR, EtherFuse, BIO.XYZ, and Gnosis. Previous work with Coin Bureau, the world's largest cryptocurrency media platform, involved translating complex blockchain concepts into accessible content for millions of global viewers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section id="work" class="case-studies">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Our Work</div>
+                <h2 class="section-title">Recent engagements</h2>
+            </div>
+
+            <div class="case-grid">
+                <div class="case-card">
+                    <div class="case-meta">
+                        <div class="case-meta-item">
+                            <span class="case-meta-label">Client</span>
+                            <span>Myosin</span>
+                        </div>
+                        <div class="case-meta-item">
+                            <span class="case-meta-label">Timeline</span>
+                            <span>Ongoing</span>
+                        </div>
+                    </div>
+                    <h3>AI Hub & Content Lead</h3>
+                    <p>Leading AI strategy and content operations for a highly selective web3 marketing DAO serving clients including Ripple, NEAR, EtherFuse, BIO.XYZ, and Gnosis. Developed institutional landing pages and created comprehensive educational programming, including a 10-week AI-enabled marketing workshop and a 16-week N8N automation curriculum for professionals and small businesses.</p>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-meta">
+                        <div class="case-meta-item">
+                            <span class="case-meta-label">Client</span>
+                            <span>EtherFuse</span>
+                        </div>
+                        <div class="case-meta-item">
+                            <span class="case-meta-label">Timeline</span>
+                            <span>2024</span>
+                        </div>
+                    </div>
+                    <h3>Technical Content Strategy</h3>
+                    <p>Produced technical content examining stablecoin architecture and sovereign debt tokenization for a blockchain infrastructure platform. Translated complex DeFi mechanisms into strategic narratives for institutional and retail audiences.</p>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-meta">
+                        <div class="case-meta-item">
+                            <span class="case-meta-label">Client</span>
+                            <span>Coin Bureau</span>
+                        </div>
+                        <div class="case-meta-item">
+                            <span class="case-meta-label">Timeline</span>
+                            <span>Past engagement</span>
+                        </div>
+                    </div>
+                    <h3>Content Strategy & Production</h3>
+                    <p>Contributed to content strategy and production for the cryptocurrency sector's largest media platform, helping transform technical blockchain concepts into accurate, engaging material for a global audience of millions.</p>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-meta">
+                        <div class="case-meta-item">
+                            <span class="case-meta-label">Project</span>
+                            <span>BeginnerAI</span>
+                        </div>
+                        <div class="case-meta-item">
+                            <span class="case-meta-label">Timeline</span>
+                            <span>2024–Present</span>
+                        </div>
+                    </div>
+                    <h3>Educational Newsletter Initiative</h3>
+                    <p>Launched weekly newsletter delivering curated AI content and automation tutorials for marketers and business owners. Built custom landing page infrastructure and integrated Beehiiv for content distribution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Let's discuss your objectives</h2>
+            <p>Explore how AI automation and strategic content can serve your business goals.</p>
+            <a href="mailto:srfarrellconsultancy@gmail.com" class="contact-button">Get in touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 SR Farrell Consultancy Ltd. Registered in Ireland.</p>
+        </div>
+    </footer>
+</body>
+</html>

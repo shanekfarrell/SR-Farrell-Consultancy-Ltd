@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact SR Farrell Consultancy to discuss AI automation and content strategy for your business. Get in touch today.">
+    <meta name="keywords" content="contact, SR Farrell, consultancy, AI automation, content strategy">
+    <meta name="author" content="SR Farrell Consultancy">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://srfarrell.com/contact">
+    <meta property="og:title" content="Contact | SR Farrell Consultancy">
+    <meta property="og:description" content="Get in touch to discuss AI automation and content strategy for your business.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon2.png">
+    <link rel="canonical" href="https://srfarrell.com/contact">
+
+    <title>Contact | SR Farrell Consultancy</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "mainEntity": {
+            "@type": "ProfessionalService",
+            "name": "SR Farrell Consultancy",
+            "email": "srfarrellconsultancy@gmail.com"
+        }
+    }
+    </script>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <header>
+        <nav role="navigation" aria-label="Main navigation">
+            <a href="index.html" class="logo" aria-label="SR Farrell Consultancy Home">
+                <div class="logo-icon-wrapper">
+                    <img src="favicon2.png" alt="" class="logo-favicon" aria-hidden="true">
+                </div>
+                <span class="logo-text">SR Farrell</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="contact.html" aria-current="page">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Get in Touch</h1>
+                <p>Let's discuss how AI automation and strategic content can serve your business goals.</p>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="contact-form-section" aria-labelledby="form-heading">
+            <div class="container">
+                <div class="contact-form-container">
+                    <h2 id="form-heading" class="visually-hidden">Contact Form</h2>
+
+                    <!-- Contact Form -->
+                    <form
+                        id="contact-form"
+                        method="POST"
+                        action="https://shane45.app.n8n.cloud/webhook/SRFarrell-email"
+                        class="contact-form fade-in"
+                    >
+
+                        <div class="form-group">
+                            <label for="name">Name <span class="required">*</span></label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                required
+                                autocomplete="name"
+                                placeholder="Your full name"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                autocomplete="email"
+                                placeholder="your@email.com"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company / Organization</label>
+                            <input
+                                type="text"
+                                id="company"
+                                name="company"
+                                autocomplete="organization"
+                                placeholder="Your company name"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label id="interests-label">What are you interested in? <span class="required">*</span></label>
+                            <div class="checkbox-group" role="group" aria-labelledby="interests-label">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="AI Automation">
+                                    AI Automation
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="Content Strategy">
+                                    Content Strategy
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="Web3 & Crypto Content">
+                                    Web3 & Crypto Content
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="Workflow Optimization">
+                                    Workflow Optimization
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="Technical Documentation">
+                                    Technical Documentation
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="Multilingual Content">
+                                    Multilingual Content
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="Other">
+                                    Other
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Tell us about your project <span class="required">*</span></label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                required
+                                placeholder="Describe your project, goals, and any specific challenges you're facing..."
+                            ></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="referral">How did you hear about us?</label>
+                            <select id="referral" name="referral">
+                                <option value="">Select an option</option>
+                                <option value="Search Engine">Search Engine</option>
+                                <option value="Social Media">Social Media</option>
+                                <option value="Referral">Referral</option>
+                                <option value="BeginnerAI Newsletter">BeginnerAI Newsletter</option>
+                                <option value="Myosin">Myosin</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-submit">
+                            <button type="submit" class="btn">Send Message</button>
+                        </div>
+
+                        <p class="form-note">
+                            Prefer email? Reach us directly at <a href="mailto:srfarrellconsultancy@gmail.com">srfarrellconsultancy@gmail.com</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon-wrapper">
+                        <img src="favicon2.png" alt="" class="logo-favicon" aria-hidden="true">
+                    </div>
+                    <span>SR Farrell Consultancy</span>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 SR Farrell Consultancy Ltd. Registered in Ireland.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('nav ul');
+
+        navToggle.addEventListener('click', () => {
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', !isExpanded);
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Form submission handler
+        const form = document.getElementById('contact-form');
+        const checkboxes = form.querySelectorAll('input[name="interests"]');
+        const submitBtn = form.querySelector('button[type="submit"]');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Check if at least one interest is selected
+            const checked = Array.from(checkboxes).some(cb => cb.checked);
+            if (!checked) {
+                alert('Please select at least one area of interest.');
+                checkboxes[0].focus();
+                return;
+            }
+
+            // Collect form data
+            const formData = new FormData(form);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                company: formData.get('company') || '',
+                interests: formData.getAll('interests'),
+                message: formData.get('message'),
+                referral: formData.get('referral') || ''
+            };
+
+            // Disable submit button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    // Show success message
+                    form.innerHTML = `
+                        <div style="text-align: center; padding: 48px 24px;">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 24px;">
+                                <circle cx="32" cy="32" r="32" fill="#06B6D4"/>
+                                <path d="M20 32L28 40L44 24" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <h3 style="font-size: 28px; margin-bottom: 16px; color: #333;">Message sent!</h3>
+                            <p style="font-size: 16px; color: #666;">Thank you for reaching out. We'll get back to you within 1-2 business days.</p>
+                        </div>
+                    `;
+                } else {
+                    throw new Error('Failed to send message');
+                }
+            } catch (error) {
+                alert('There was an error sending your message. Please try again or email us directly at srfarrellconsultancy@gmail.com');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            }
+        });
+    </script>
+
+    <style>
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</body>
+</html>
