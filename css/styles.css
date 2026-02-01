@@ -8,7 +8,7 @@
 }
 
 :root {
-    --primary-blue: #1E3A8A;
+    --primary-blue: #12747f;
     --accent-cyan: #06B6D4;
     --black: #000000;
     --dark-gray: #333333;
@@ -89,7 +89,7 @@ nav {
 .logo-icon-wrapper {
     width: 40px;
     height: 40px;
-    background: #1E3A8A;
+    background: #12747f;
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -587,7 +587,7 @@ section {
 }
 
 .form-submit .btn:hover {
-    background: #162d6e;
+    background: #0e5c65;
 }
 
 .form-note {

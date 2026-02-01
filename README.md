@@ -68,7 +68,7 @@ Then open http://localhost:3000 (serve) or http://localhost:8000 (Python)
 
 | Color | Hex | Usage |
 |-------|-----|-------|
-| Primary Blue | `#1E3A8A` | Logo, CTAs, hero backgrounds |
+| Primary Teal | `#12747f` | Logo, CTAs, hero backgrounds |
 | Accent Cyan | `#06B6D4` | Highlights, labels, accents |
 | Header Grey | `#9CA3AF` | Navigation background |
 | Dark Grey | `#333333` | Body text, footer |
